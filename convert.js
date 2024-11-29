@@ -112,7 +112,7 @@ function convertLatexFormat(oldFormat) {
             }
         }
 
-        return `\\uuid{${id}}
+        return `\\exo7id{${id}}
 \\titre{${titre}}
 \\theme{}
 \\auteur{${auteur}}

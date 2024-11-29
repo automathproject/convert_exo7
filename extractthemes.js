@@ -1,11 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// Fonction pour formatter l'UUID
-function formatUUID(num) {
-    return `ex${num.toString().padStart(6, '0')}`;
-}
-
 // Fonction pour parser les numéros dans une insertion
 function parseNumbers(insertion) {
     const numbers = [];
@@ -50,8 +45,7 @@ function parseFile(content) {
                 const numbers = parseNumbers(value);
                 for (const num of numbers) {
                     results.push({
-                        uuid: formatUUID(num),
-                        // Utiliser un Set pour supprimer les doublons, puis reconvertir en tableau
+                        exo7id: num,
                         themes: [...new Set(currentThemes)]
                     });
                 }
