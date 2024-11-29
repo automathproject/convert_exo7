@@ -1,0 +1,27 @@
+\uuid{VisM}
+\exo7id{4358}
+\titre{Transformée de Laplace}
+\theme{Exercices de Michel Quercia, Intégrale dépendant d'un paramètre}
+\auteur{quercia}
+\date{2010/03/12}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $f : {[0,+\infty[} \to \R$ continue telle que $ \int_{t=0}^{+\infty}f(t)\,d t$ converge (pas forcément absolument).
+
+On pose $\varphi(a) =  \int_{t=0}^{+\infty}e^{-at}f(t)\,d t$.}
+\begin{enumerate}
+  \item \question{Montrer que $\varphi$ est de classe $\mathcal{C}^\infty$ sur $]0,+\infty[$.}
+  \item \question{Montrer que $\varphi$ est continue en $0$.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{IPP.}
+  \item \reponse{Soit $F(x) =  \int_{t=x}^{+\infty}f(t)\,d t$.
+    On a $\varphi(a) = F(0) -a \int_{t=0}^{+\infty} e^{-at}F(t)\,d t$.
+
+    Soit $\varepsilon > 0$ et $A$ tel que $x>A  \Rightarrow  |F(x)| \le \varepsilon$.
+    On a~:
+    $$\left|a \int_{t=0}^{+\infty} e^{-at}F(t)\,d t\right| \le
+      a\sup{|F(t)|, t\in{[0,A]}} + \varepsilon e^{-aA} \le 2\varepsilon$$
+    pour $a$ suffisament petit.}
+\end{enumerate}
+}

@@ -1,0 +1,22 @@
+\uuid{G7Fs}
+\exo7id{4814}
+\titre{$uv - vu = \mathrm{id}$}
+\theme{Exercices de Michel Quercia, Topologie dans les espaces vectoriels normés}
+\auteur{quercia}
+\date{2010/03/16}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $E$ un espace vectoriel norm{\'e} et $u,v \in \mathcal{L}(E)$ tels que
+$u\circ v - v \circ u = \mathrm{id}_E$.}
+\begin{enumerate}
+  \item \question{Calculer $u\circ v^n - v^n \circ u$ pour $n \in \N^*$.}
+  \item \question{Montrer que $u$ ou $v$ est discontinu.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{$nv^{n-1}$.}
+  \item \reponse{Si $u$ et $v$ sont continus,
+             $n\|v^{n-1}\| \le 2\|u\|\,\|v^n\| \le 2\|u\|\,\|v^{n-1}\|\,\|v\|$.\par
+             S'il existe $k$ tel que $v^k = 0$, on peut remonter jusqu'{\`a} $v = 0$, absurde.
+             Sinon, on a aussi une contradiction.}
+\end{enumerate}
+}

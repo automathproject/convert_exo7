@@ -1,0 +1,33 @@
+\uuid{KgCr}
+\exo7id{3454}
+\titre{$\det( A + (\alpha) )$}
+\theme{Exercices de Michel Quercia, Calculs de déterminants}
+\auteur{quercia}
+\date{2010/03/10}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $A \in \mathcal{M}_n(K)$ et
+$U = \begin{pmatrix} 1       &\dots  &1       \cr
+                \vdots  &       &\vdots  \cr
+                1       &\dots  &1       \cr \end{pmatrix}$.}
+\begin{enumerate}
+  \item \question{Démontrer que :
+    $\det(A + \alpha U) = \det A + \alpha \sum \text{cofacteurs de } A$.}
+  \item \question{En déduire la valeur de
+     $D(a,b,c) = \begin{vmatrix}a       & b      & \dots  & b      \cr
+                           c       & \ddots & \ddots & \vdots \cr
+                           \vdots  & \ddots & \ddots & b      \cr
+                           c       & \dots  & c      & a      \end{vmatrix}$,
+  \begin{enumerate}}
+  \item \question{pour $b \ne c$.}
+  \item \question{pour $b = c$.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{Développer.}
+  \item \reponse{\begin{enumerate}}
+  \item \reponse{$\begin{cases} D(a-b,0,c-b) = (a-b)^n \cr
+                       D(a-c,b-c,0) = (a-c)^n \cr\end{cases}  \Rightarrow 
+               D(a,b,c) = \frac { c(a-b)^n - b(a-c)^n } {c-b}$.}
+  \item \reponse{$\det( (a-b)I + bU ) = (a-b)^n + nb(a-b)^{n-1}$.}
+\end{enumerate}
+}

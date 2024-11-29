@@ -1,0 +1,17 @@
+\uuid{4090}
+\titre{$f'' + f' + f \to 0$}
+\theme{Exercices de Michel Quercia, \'Equations différentielles linéaires (II)}
+\auteur{quercia}
+\date{2010/03/11}
+\organisation{exo7}
+\contenu{
+  \texte{}
+  \question{Soit $f : \R \to\R$ de classe $\mathcal{C}^2$ telle que
+$f''(t) + f'(t) + f(t) \to 0$ lorsque $t\to+\infty$. Démontrer que $f(t) \to 0$ lorsque $t\to\infty$.}
+  \reponse{On pose $\varphi(t) = f''(t)+f'(t)+f(t)$.
+
+$f(t) = e^{-t/2} \left[ -\frac 2{\sqrt3}
+         \int_{u=0}^t \varphi(u)e^{u/2} \sin\left({\frac {\sqrt3\,(u-t)}2 }\right), d u
+        + A\cos\left(\frac {\sqrt3\,u}2 \right) + B\sin\left(\frac {\sqrt3\,u}2\right)
+        \right ]$.}
+}

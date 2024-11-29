@@ -1,0 +1,25 @@
+\uuid{IXZA}
+\exo7id{4818}
+\titre{Thm de l'hyperplan ferm{\'e}}
+\theme{Exercices de Michel Quercia, Topologie dans les espaces vectoriels normés}
+\auteur{quercia}
+\date{2010/03/16}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $E$ un $\R$-evn et $f \in E^*$.}
+\begin{enumerate}
+  \item \question{Montrer que $f$ est continue si et seulement si $\mathrm{Ker} f$ est ferm{\'e}
+    (pour la r{\'e}ciproque : supposer $\mathrm{Ker} f$ ferm{\'e}, montrer que $\{x \text{ tq } f(x) > 0\}$
+     est ouvert, puis {\'e}tudier $\{ x \text{ tq } -1 < f(x) < 1\}$).}
+  \item \question{On suppose $f$ continue. Soit $x \in E$. Montrer que $|f(x)| = \|f\|d(x,\mathrm{Ker} f)$.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{Si $x \notin \mathrm{Ker} f$ :
+             $\forall\ y \in \mathrm{Ker} f,\ |f(x)| = |f(x-y)| \le \|f\|\,\|x-y\|$
+             donc $|f(x)| \le \|f\|d(x,\mathrm{Ker} f)$.\par
+             Soit $z \in E : z = \alpha x + y$ avec $y \in \mathrm{Ker} f$.
+             Alors $|f(z)| = |\alpha||f(x)|$ et $\|z\| \ge |\alpha|d(x,\mathrm{Ker} f)$
+
+             donc $\frac{|f(z)|}{\|z\|} \le \frac{|f(x)|}{d(x,\mathrm{Ker} f)}$.}
+\end{enumerate}
+}

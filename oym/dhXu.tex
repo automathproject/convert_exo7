@@ -1,0 +1,21 @@
+\uuid{dhXu}
+\exo7id{4697}
+\titre{Radicaux it{\'e}r{\'e}s}
+\theme{Exercices de Michel Quercia, Suites convergentes}
+\auteur{quercia}
+\date{2010/03/16}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $u_n = \sqrt{ n + \sqrt{ n-1 + \dots + \sqrt 1 }}$.}
+\begin{enumerate}
+  \item \question{Montrer que la suite $\left(\frac{u_n}{\sqrt n}\right)$ est born{\'e}e.}
+  \item \question{D{\'e}terminer $\lim_{n\to\infty} \left(\frac{u_n}{\sqrt n}\right)$.}
+  \item \question{D{\'e}terminer $\lim_{n\to\infty}(u_n-\sqrt n\,)$.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{Par r{\'e}currence, $\sqrt n \le u_n \le \sqrt{2n}$.}
+  \item \reponse{$\sqrt n \le u_n \le \sqrt{n+\sqrt{2(n-1)}}  \Rightarrow  \lim = 1$.}
+  \item \reponse{$\sqrt{n+\sqrt{n-1}} \le u_n \le \sqrt{n+\sqrt{n-1+\sqrt{2(n-2)}}}
+               \Rightarrow  \lim = \frac 12$.}
+\end{enumerate}
+}

@@ -1,0 +1,36 @@
+\uuid{KpIC}
+\exo7id{1265}
+\titre{Exercice 1265}
+\theme{Développements limités, Applications}
+\auteur{legall}
+\date{2003/10/01}
+\organisation{exo7}
+\contenu{
+  \texte{Déterminer:}
+\begin{enumerate}
+  \item \question{\begin{enumerate}}
+  \item \question{$\displaystyle \lim _{x \rightarrow +\infty} \sqrt{x^2+3x+2} +x$}
+  \item \question{$\displaystyle \lim _{x \rightarrow -\infty} \sqrt{x^2+3x+2} +x$}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{\begin{enumerate}}
+  \item \reponse{La première limite n'est pas une forme indéterminée, en effet 
+$$\lim_{x \rightarrow +\infty} \sqrt {x^2+3x+2}  = +\infty \quad \text{ et } \quad \lim_{x \rightarrow +\infty} x = +\infty$$
+donc 
+$$\lim_{x \rightarrow +\infty} \sqrt {x^2+3x+2} +x = + \infty$$}
+  \item \reponse{Lorsque $x\to -\infty$ la situation est tout autre car
+$$\lim_{x \rightarrow -\infty} \sqrt {x^2+3x+2} = +\infty \quad \text{ et } \quad \lim_{x \rightarrow -\infty} x = -\infty$$
+donc $\sqrt {x^2+3x+2} +x$ est une forme indéterminée !
+
+Calculons un développement limité à l'ordre $1$ en $-\infty$ en faisant très attention au signe (car par exemple $|x|=-x$):
+\begin{align*}
+\sqrt{x^2+3x+2} +x 
+  & = |x| \left( \sqrt{1+\frac{3}{x}+\frac{2}{x^2}} -1 \right) \\
+  & = |x| \left( 1+\frac12\left(\frac{3}{x}+\frac{2}{x^2}\right)+o(\frac1x) \ -1)  \right) \\
+  & = |x| \left( \frac12\frac{3}{x}+o(\frac1x) \right) \\
+  & = -\frac32 + o(1) \\
+\end{align*}
+Et donc  
+$$\lim_{x \rightarrow -\infty} \sqrt {x^2+3x+2} +x = -\frac32$$}
+\end{enumerate}
+}
