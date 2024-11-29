@@ -1,0 +1,66 @@
+\uuid{5971}
+\titre{Exercice 5971}
+\theme{}
+\auteur{tumpach}
+\date{2010/11/11}
+\organisation{exo7}
+\contenu{
+  \texte{\textbf{D\'efinition.}
+Soient $\mu$ et $\nu$ deux mesures  sur un espace mesur\'e
+$(\Omega, \Sigma)$. On dit que $\nu$ est absolument continue par
+rapport \`a  $\mu$ et on \'ecrit $\nu<<\mu$ si
+$$
+\mu(S) = 0 \Rightarrow \nu(S) = 0
+$$
+pour tout $S\in\Sigma$. 
+
+\bigskip
+
+\textbf{Th\'eor\`eme de Radon-Nikodym.}
+%\label{t}
+Soient $\mu$ et $\nu$ deux mesures finies  sur un espace mesur\'e
+$(\Omega, \Sigma)$. Si $\nu$ est absolument continue par rapport
+\`a $\mu$, alors il existe une fonction positive $h\in L^1(\Omega,
+\mu)$ telle que pour toute fonction positive mesurable $F$ on a~:
+\begin{equation}\label{radon}
+\int_{\Omega} F(x) \,d\nu(x) = \int_{\Omega} F(x) h(x)\,d\mu(x).
+\end{equation}
+
+\bigskip
+
+
+Le but de cet exercice est de d\'emontrer ce th\'eor\`eme de Radon-Nikodym.}
+\begin{enumerate}
+  \item \question{Posons
+$$
+\alpha = \mu + 2\nu, \quad\quad \omega = 2\mu + \nu.
+$$
+On consid\`ere l'espace de Hilbert $L^2(\Omega, \alpha)$ des
+fonctions de carr\'e int\'egrable par rapport \`a la mesure
+$\alpha$ et l'application lin\'eaire $\varphi~: L^2(\Omega,
+\alpha) \rightarrow \mathbb{C}$ donn\'ee par~:
+$$
+\varphi(f) = \int_{\Omega} f(x)\,d\omega(x).
+$$
+Montrer que $\varphi~: L^2(\Omega, \alpha) \rightarrow \mathbb{C}$
+est une application lin\'eaire continue.}
+  \item \question{En d\'eduire qu'il existe $g\in L^{2}(\Omega, \alpha)$ tel
+que pour tout $f \in L^2(\Omega, \alpha)$~:
+$$
+\int_{\Omega} f(2g - 1) \,d\nu =  \int_{\Omega} f(2 - g) \,d\mu.
+$$}
+  \item \question{Montrer que les ensembles $S_{1l} := \{x\in\Omega, g(x) <
+\frac{1}{2} - \frac{1}{l}\}$ et  $S_{2l} := \{x\in \Omega, g(x)
+> 2 + \frac{1}{l}\}$ o\`u $l\in\mathbb{N}^*$ v\'erifient $\mu(S_{jl}) = \nu(S_{jl})  = 0$.
+En d\'eduire que l'on peut choisir la fonction $g$ de telle
+mani\`ere que $\frac{1}{2} \leq g \leq 2$.  Montrer que l'ensemble
+$Z = \{ x\in \Omega~: g(x) = \frac{1}{2}\}$ est de $\mu$-mesure
+$0$.}
+  \item \question{Montrer que la fonction $$h(x) = \frac{2 - g(x)}{2g(x) -
+1}$$ est bien d\'efinie, positive, appartient \`a $L^{1}(\Omega,
+\mu)$ et satisfait \eqref{radon}.}
+\end{enumerate}
+\begin{enumerate}
+
+\end{enumerate}
+}

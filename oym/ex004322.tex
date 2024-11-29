@@ -1,0 +1,22 @@
+\uuid{4322}
+\titre{$(\int f^x)^{1/x}$}
+\theme{}
+\auteur{quercia}
+\date{2010/03/12}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $f : {[a,b]} \to {\R^+}$ continue. On pose
+$\varphi(x) = \left({ \int_{t=a}^b (f(t))^x\,d t}\right)^{1/x}$.}
+\begin{enumerate}
+  \item \question{Montrer que $\varphi(x) \to \max(f)$ lorsque $x\to+\infty$.}
+  \item \question{On suppose $f > 0$ et $b-a = 1$.
+    Montrer que $\varphi(x) \to \exp\left({ \int_{t=a}^b\ln(f(t))\,d t}\right)$ lorsque $x\to0^+$.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{Soit $\varepsilon > 0$ : Pour $x$ assez petit,
+             $\bigl|f(t)^x-1-x\ln(f(t))\bigr| \le \varepsilon x$ car $\ln f$
+             est borné sur $[a,b]$.\par
+             Donc $\left| \int_{t=a}^b f(t)^xd t - 1 - x \int_{t=a}^b\ln(f(t))\,d t\right| \le \varepsilon x$,
+             et   $\left|\ln\left({ \int_{t=a}^b f(t)^xd t}\right) - x \int_{t=a}^b\ln(f(t))\,d t\right| \le 2\varepsilon x$.}
+\end{enumerate}
+}

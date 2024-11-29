@@ -1,0 +1,23 @@
+\uuid{3994}
+\titre{Limite de $f(x) - xf'(x)$}
+\theme{}
+\auteur{quercia}
+\date{2010/03/11}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $f : \R \to \R$ convexe dérivable.}
+\begin{enumerate}
+  \item \question{Montrer que $p = \lim_{x\to+\infty} (f(x) - xf'(x))$ existe.}
+  \item \question{On suppose $p$ fini. En utilisant le fait que $f(x) - xf'(x)$ est
+    bornée au voisinage de $+\infty$, montrer que $\frac{f(x)}x$ et $f'(x)$
+    admettent une même limite $m$ finie en $+\infty$.}
+  \item \question{Montrer alors que $f(x) - mx - p \to 0$ lorsque $x\to {+\infty}$.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{Fonction décroissante sur $\R^+$.}
+  \item \reponse{$f(x) - xf'(x) = -x^2\frac {d}{d x}\left(\frac {f(x)}x\right)$.
+    Donc, $x \mapsto \frac {f(x) - p}x \searrow$ et
+          $x \mapsto \frac {f(x) - f(0)}x \nearrow$.}
+  \item \reponse{$p\le f(x) - mx \le f(x) - xf'(x)$.}
+\end{enumerate}
+}

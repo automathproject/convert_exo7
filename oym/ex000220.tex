@@ -1,0 +1,23 @@
+\uuid{220}
+\titre{Exercice 220}
+\theme{}
+\auteur{bodin}
+\date{1998/09/01}
+\organisation{exo7}
+\contenu{
+  \texte{}
+  \question{En utilisant la fonction $x\mapsto(1+x)^n$, calculer :
+$$ \sum_{k=0}^{n}C_n^k \quad ; \quad \sum_{k=0}^{n}(-1)^k C_n^k \quad ; \quad
+ \sum_{k=1}^{n}kC_n^k \quad ; \quad
+ \sum_{k=0}^{n}\frac{1}{k+1}C_n^k.$$}
+  \reponse{Soit $f : \Rr \longrightarrow \Rr$ la fonction $f(x) = (1+x)^n$.
+Par la formule du bin\^ome de Newton nous savons que
+$$f(x) = (1+x)^n = \sum_{k=0}^{n} C_n^k x^k.$$
+\begin{enumerate}
+  \item En calculant $f(1)$ nous avons $2^n = \sum_{k=0}^{n} C_n^k$.
+  \item En calculant $f(-1)$ nous avons $0 = \sum_{k=0}^{n} (-1)^k C_n^k$.
+  \item Maintenant calculons  $f'(x) = n(1+x)^{n-1} = \sum_{k=1}^{n} kC_n^k x^{k-1}$. \'Evaluons $f'(1) = n2^{n-1} = \sum_{k=1}^{n} kC_n^k$.
+  \item Il s'agit ici de calculer la primitive $F$ de $f$ qui correspond \`a la somme :
+$F(x) = \frac{1}{n+1}(1+x)^{n+1}-\frac{1}{n+1} = \sum_{k=0}^{n} \frac{1}{k+1}C_n^k x^{k+1}$. En $F(1) = \frac{1}{n+1}(2^{n+1}-1) = \sum_{k=0}^{n} \frac{1}{k+1}C_n^k $.
+\end{enumerate}}
+}

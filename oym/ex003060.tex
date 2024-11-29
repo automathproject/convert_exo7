@@ -1,0 +1,23 @@
+\uuid{3060}
+\titre{$f(f(n)) < f(n+1)$}
+\theme{}
+\auteur{quercia}
+\date{2010/03/08}
+\organisation{exo7}
+\contenu{
+  \texte{Soit $f : {\N} \to {\N}$ telle que :
+$\forall\ n \in \N,\ f(f(n)) < f(n+1)$.
+On veut montrer que $f = \text{id}_{\N}$.
+\par {\it (Olympiades 1977)}}
+\begin{enumerate}
+  \item \question{Montrer que $\forall\ n\in \N,\ \forall\ x \ge n,\ f(x) \ge n$.}
+  \item \question{Soit $n \in \N$ et $a \ge n$ tel que $f(a) = \min\{f(x)$ tq $x\ge n\}$.
+    Montrer que $a=n$.}
+  \item \question{En d{\'e}duire que $f$ est strictement croissante, puis conclure.}
+\end{enumerate}
+\begin{enumerate}
+  \item \reponse{R{\'e}currence sur $n$.}
+  \item \reponse{Si $a > n$, alors $a = b+1$ avec $b \ge n$, donc $f(b) \ge n$,
+    donc $f(f(b)) \ge f(a)$. Contradiction.}
+\end{enumerate}
+}

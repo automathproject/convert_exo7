@@ -1,0 +1,77 @@
+\uuid{2640}
+\titre{Exercice 2640}
+\theme{}
+\auteur{debievre}
+\date{2009/05/19}
+\organisation{exo7}
+\contenu{
+  \texte{}
+  \question{Les variables \'etant not\'ees $x$ et $t$,
+trouver la solution g\'en\'erale 
+$f\colon\R^2\to\R$
+de ``l'\'equation des ondes'', \`a savoir
+\begin{equation}\label{eq:ondes}
+\frac{\partial^2 f}{\partial x^2}-\frac{\partial^2 f}{\partial t^2}=0.
+\end{equation}
+Trouver ensuite la solution unique de l'\'equation des ondes qui
+satisfait aux conditions initiales
+\begin{equation}
+f(x,0)=\sin x, \ \frac{\partial f}{\partial t}(x,0)=-\cos x.
+\label{in}
+\end{equation}}
+  \reponse{\begin{enumerate}  
+\item Avec $\frac{\partial }{\partial u}
+=1/2(\frac{\partial}{\partial x}+\frac{\partial}{\partial t})$ et
+$\frac{\partial }{\partial v}
+=1/2(-\frac{\partial}{\partial x}+\frac{\partial}{\partial t})$
+nous obtenons les identit\'es
+\begin{align*}
+\frac{\partial F}{\partial u}&= 
+\frac 12\frac{\partial f}{\partial x}+\frac 12\frac{\partial f}{\partial t}
+\\
+\frac{\partial F}{\partial v}&= 
+-\frac 12\frac{\partial f}{\partial x}+\frac 12\frac{\partial f}{\partial t}
+\\
+\frac{\partial^2 F}{\partial u \partial v}&= 
+-\frac 14\frac{\partial^2 f}{\partial x^2}
++\frac 14\frac{\partial^2 f}{\partial t^2}
+\end{align*}
+d'o\`u pour que $f$ satisfasse \`a l'\'equation \eqref{eq:ondes} il faut et il suffit que $F$ satisfasse \`a l'\'equation
+ \eqref{eq:ondesbis}.
+
+\item Supposons que $F$ satisfasse \`a l'\'equation \eqref{eq:ondesbis}.
+Alors la fonction $\frac{\partial F}{\partial u}$ est une fonction
+disons $h_1$ seulement de la variable $u$
+et la fonction $\frac{\partial F}{\partial v}$ est une fonction
+disons $h_2$ seulement de la variable $v$.
+Par cons\'equent,
+$F(u,v)= g_1(u)+g_2(v)$ o\`u $g'_1=h_1$ et $g'_2=h_2$.
+
+\item La solution g\'en\'erale de
+\eqref{eq:ondes} s'\'ecrit alors
+\[
+f(x,t)=g_1(u)+g_2(v)=g_1(x+t)+g_2(t-x) .
+\]
+La fonction $g_1$ d\'ecrit
+une onde qui se d\'eplace vers la droite et 
+la fonction $g_1$ d\'ecrit
+une onde qui se d\'eplace vers la gauche.
+
+Enfin, pour trouver la solution unique
+satisfaisant aux condition initiales \eqref{in} nous constatons que
+les conditions initiales entra\^ \i nent les identit\'es
+\begin{align*}
+f(x,0)&=g_1(x)+g_2(-x)=\sin x
+\\
+\frac {\partial f}{\partial x}(x,0)&=g'_1(x)-g'_2(-x)=\cos x
+\\
+\frac {\partial f}{\partial t}(x,0)&=g'_1(x)+g'_2(-x)=-\cos x
+\end{align*}
+d'o\`u $g'_1=0$ et $g'_2(-x)=-\cos x$, c.a.d. 
+$g_2(x)=\sin (-x)$. Par cons\'equent,
+la solution unique cherch\'ee $f$ s'\'ecrit
+\[
+f(x,t)= \sin(x-t).
+\]
+\end{enumerate}}
+}
