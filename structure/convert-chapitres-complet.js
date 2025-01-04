@@ -40,8 +40,9 @@ function parseSousChapitres(content) {
     let rowMatch;
     
     while ((rowMatch = rowRegex.exec(valuesString)) !== null) {
+        const code = parseFloat(rowMatch[1]).toFixed(2);  // Force le format à 2 décimales
         sousChapitres.push({
-            code: parseFloat(rowMatch[1]),
+            code: code,  // Garde la chaîne de caractères avec .00
             description: rowMatch[2]
         });
     }
@@ -61,7 +62,7 @@ function createNestedJson() {
     
     // Associe chaque sous-chapitre à son chapitre parent
     sousChapitres.forEach(sousChap => {
-        const parentId = Math.floor(sousChap.code); // 100.01 -> 100
+        const parentId = Math.floor(parseFloat(sousChap.code)); // Convertit le code en nombre pour extraire la partie entière
         const chapitre = chapitres.find(chap => chap.id === parentId);
         if (chapitre) {
             chapitre.sousChapitres.push(sousChap);
@@ -70,7 +71,7 @@ function createNestedJson() {
     
     // Trie les sous-chapitres par code dans chaque chapitre
     chapitres.forEach(chapitre => {
-        chapitre.sousChapitres.sort((a, b) => a.code - b.code);
+        chapitre.sousChapitres.sort((a, b) => parseFloat(a.code) - parseFloat(b.code));
     });
     
     return chapitres;
