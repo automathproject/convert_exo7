@@ -1,48 +1,40 @@
 #!/usr/bin/env node
 /**
- * Transformation d'un exercice LaTeX depuis l'ancien format vers le nouveau template.
- *
- * Règles de transformation :
- * - L'en-tête (\exercice{ID, auteur, date}) est converti en :
- *      \uuid{ID}
- *      \auteur{auteur}
- *      \datecreate{date}   (avec la date au format AAAA-MM-JJ)
- *
- * - Le bloc d'énoncé (entre \enonce et \finenonce) est analysé :
- *      - Tout ce qui se trouve avant un éventuel environnement enumerate
- *        est placé dans \texte{…}.
- *      - Si un environnement enumerate est présent, chacun de ses items
- *        (délimités par \item) est considéré comme une question.
- *
- * - Le bloc correction (entre \correction et \fincorrection) est traité de la façon suivante :
- *      - S'il contient un environnement enumerate avec autant d'items que l'énoncé,
- *        alors chaque item sera associé à la question correspondante via \reponse{…}.
- *      - Sinon, le contenu entier (ou la concaténation de tous les items) sera placé
- *        dans une unique commande \reponse{…}.
- *
- * - Le bloc indication (entre \indication et \finindication), s'il existe, est ajouté.
+ * Transformation d'exercices LaTeX depuis l'ancien format (contenu dans des fichiers .txt)
+ * vers le nouveau template, générant des fichiers .tex en sortie.
  *
  * Usage :
- *    node transform.js input.tex output.tex
+ *    node transformDir.js chemin/vers/repertoire_input chemin/vers/repertoire_output
+ *
+ * Le script parcourt tous les fichiers .txt du répertoire d'entrée, effectue la transformation et
+ * crée un fichier de sortie correspondant dans le répertoire de sortie en remplaçant l'extension par .tex.
  */
 
 const fs = require('fs');
+const path = require('path');
 
 // Vérification des arguments
 if (process.argv.length < 4) {
-  console.error("Usage: node transform.js input.tex output.tex");
+  console.error("Usage: node transformDir.js input_directory output_directory");
   process.exit(1);
 }
 
-const inputFile = process.argv[2];
-const outputFile = process.argv[3];
+const inputDir = process.argv[2];
+const outputDir = process.argv[3];
 
-fs.readFile(inputFile, 'utf8', (err, data) => {
-  if (err) {
-    console.error("Erreur lors de la lecture du fichier :", err);
-    process.exit(1);
-  }
+// Vérifier que le répertoire d'entrée existe
+if (!fs.existsSync(inputDir)) {
+  console.error(`Le répertoire d'entrée "${inputDir}" n'existe pas.`);
+  process.exit(1);
+}
 
+// Créer le répertoire de sortie s'il n'existe pas
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
+
+// Fonction de transformation d'un contenu LaTeX depuis l'ancien format vers le nouveau template.
+function transformContent(data) {
   // ---------------------------
   // 1. Extraction de l'en-tête
   // ---------------------------
@@ -50,7 +42,7 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
   const headerMatch = data.match(headerRegex);
   if (!headerMatch) {
     console.error("La commande \\exercice{...} est introuvable.");
-    process.exit(1);
+    return null;
   }
   const id = headerMatch[1].trim();
   const auteur = headerMatch[2].trim();
@@ -63,7 +55,7 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
   const enonceMatch = data.match(enonceRegex);
   if (!enonceMatch) {
     console.error("Le bloc \\enonce...\\finenonce est introuvable.");
-    process.exit(1);
+    return null;
   }
   const enonceBlock = enonceMatch[1].trim();
 
@@ -77,7 +69,7 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
     const indexEnum = enonceBlock.indexOf(enumMatch[0]);
     textePart = enonceBlock.substring(0, indexEnum).trim();
 
-    // Extraction des items de l'environment enumerate (chaque \item correspond à une question)
+    // Extraction des items de l'environnement enumerate (chaque \item correspond à une question)
     const enumContent = enumMatch[1];
     const itemRegex = /\\item\s*([\s\S]*?)(?=\\item|$)/g;
     let match;
@@ -88,7 +80,7 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
       }
     }
   } else {
-    // S'il n'y a pas d'environment enumerate, tout le bloc est considéré comme texte
+    // S'il n'y a pas d'environnement enumerate, tout le bloc est considéré comme texte
     textePart = enonceBlock;
   }
 
@@ -116,7 +108,7 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
         }
       }
     } else {
-      // Pas d'environment enumerate : on prend le bloc correction entier
+      // Pas d'environnement enumerate : on prend le bloc correction entier
       correctionWhole = correctionBlock;
     }
   }
@@ -185,14 +177,50 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
 
   output += `}\n`;
 
-  // ----------------------------------
-  // 6. Écriture du fichier de sortie
-  // ----------------------------------
-  fs.writeFile(outputFile, output, 'utf8', (err) => {
-    if (err) {
-      console.error("Erreur lors de l'écriture du fichier :", err);
-      process.exit(1);
-    }
-    console.log(`Transformation réussie : ${outputFile}`);
+  return output;
+}
+
+// Parcours des fichiers dans le répertoire d'entrée
+fs.readdir(inputDir, (err, files) => {
+  if (err) {
+    console.error("Erreur lors de la lecture du répertoire d'entrée :", err);
+    process.exit(1);
+  }
+
+  // Filtrer uniquement les fichiers se terminant par .txt
+  const txtFiles = files.filter(file => file.endsWith('.txt'));
+
+  if (txtFiles.length === 0) {
+    console.log("Aucun fichier .txt trouvé dans le répertoire d'entrée.");
+    process.exit(0);
+  }
+
+  // Pour chaque fichier .txt, effectuer la transformation
+  txtFiles.forEach(file => {
+    const inputFilePath = path.join(inputDir, file);
+    // On remplace l'extension .txt par .tex pour le fichier de sortie
+    const outputFileName = file.replace(/\.txt$/, '.tex');
+    const outputFilePath = path.join(outputDir, outputFileName);
+
+    fs.readFile(inputFilePath, 'utf8', (err, data) => {
+      if (err) {
+        console.error(`Erreur lors de la lecture du fichier ${inputFilePath} :`, err);
+        return;
+      }
+
+      const transformed = transformContent(data);
+      if (transformed === null) {
+        console.error(`La transformation a échoué pour le fichier ${file}.`);
+        return;
+      }
+
+      fs.writeFile(outputFilePath, transformed, 'utf8', (err) => {
+        if (err) {
+          console.error(`Erreur lors de l'écriture du fichier ${outputFilePath} :`, err);
+        } else {
+          console.log(`Transformation réussie pour ${file} -> ${outputFileName}`);
+        }
+      });
+    });
   });
 });
