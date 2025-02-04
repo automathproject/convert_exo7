@@ -1,5 +1,13 @@
 [
   {
+    "exo7id": 1,
+    "auteur": "bodin",
+    "datecreate": "1998-09-01",
+    "isindication": true,
+    "iscorrection": true,
+    "sousChapitre": "104.01"
+  },
+  {
     "exo7id": 2,
     "auteur": "bodin",
     "datecreate": "1998-09-01",
