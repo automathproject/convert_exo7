@@ -1,54 +1,33 @@
 const fs = require('fs');
+const path = require('path');
 
-// Fonction pour générer un UUID alphanumérique de 4 caractères
-function generateUUID() {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
-    for (let i = 0; i < 4; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
+// Lecture du fichier JSON contenant les exercices.
+// On suppose que le fichier JSON est un tableau d'objets.
+const exercicesJson = JSON.parse(fs.readFileSync('structure/exercices.json', 'utf8'));
+
+// Création d'une Map associant exo7id (clé) à uuid (valeur)
+const exercicesMap = new Map(exercicesJson.map(e => [e.exo7id, e.uuid]));
+
+// Lecture de la liste des fichiers dans le répertoire 'oymv2'
+const files = fs.readdirSync('oymv2');
+files.forEach(file => {
+    // On ne traite que les fichiers se terminant par .tex
+    if (file.endsWith('.tex')) {
+        const filePath = path.join('oymv2', file);
+        const content = fs.readFileSync(filePath, 'utf8');
+        
+        // Extraction de l'identifiant depuis le nom du fichier.
+        // Par exemple, "3.tex" donnera l'id 3.
+        const id = parseInt(path.basename(file, '.tex'), 10);
+        const uuid = exercicesMap.get(id);
+        
+        if (uuid) {
+            // Insertion de la ligne \uuid{...} en tête du contenu du fichier
+            const newContent = `\\uuid{${uuid}}\n${content}`;
+            fs.writeFileSync(filePath, newContent);
+            console.log(`UUID ajouté dans ${file} : ${uuid}`);
+        } else {
+            console.log(`Aucun UUID trouvé pour le fichier ${file}`);
+        }
     }
-    return result;
-}
-
-// Fonction pour vérifier si un UUID est unique
-function isUUIDUnique(uuid, usedUUIDs) {
-    return !usedUUIDs.has(uuid);
-}
-
-// Fonction principale
-function main() {
-    try {
-        // Lire le fichier themes.json
-        const data = JSON.parse(fs.readFileSync('themes.json', 'utf-8'));
-        
-        // Ensemble pour stocker les UUIDs déjà utilisés
-        const usedUUIDs = new Set();
-        
-        // Ajouter un UUID unique à chaque entrée
-        const updatedData = data.map(entry => {
-            let uuid;
-            do {
-                uuid = generateUUID();
-            } while (!isUUIDUnique(uuid, usedUUIDs));
-            
-            usedUUIDs.add(uuid);
-            
-            return {
-                ...entry,
-                uuid: uuid
-            };
-        });
-        
-        // Sauvegarder le résultat dans un nouveau fichier
-        const outputPath = 'themes_with_uuid.json';
-        fs.writeFileSync(outputPath, JSON.stringify(updatedData, null, 2));
-        console.log(`Traitement terminé. Résultats sauvegardés dans ${outputPath}`);
-        console.log(`Nombre d'entrées traitées: ${updatedData.length}`);
-
-    } catch (error) {
-        console.error('Erreur lors du traitement:', error.message);
-        process.exit(1);
-    }
-}
-
-main();
+});
