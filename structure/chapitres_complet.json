@@ -1,5 +1,35 @@
 [
   {
+    "id": 100,
+    "titre": "Logique, ensemble, raisonnement",
+    "sousChapitres": [
+      {
+        "code": "100.01",
+        "description": "Logique"
+      },
+      {
+        "code": "100.02",
+        "description": "Ensemble"
+      },
+      {
+        "code": "100.03",
+        "description": "Absurde et contraposée"
+      },
+      {
+        "code": "100.04",
+        "description": "Récurrence"
+      },
+      {
+        "code": "100.05",
+        "description": "Relation d'équivalence, relation d'ordre"
+      },
+      {
+        "code": "100.99",
+        "description": "Autre"
+      }
+    ]
+  },
+  {
     "id": 101,
     "titre": "Injection, surjection, bijection",
     "sousChapitres": [
@@ -50,6 +80,10 @@
       {
         "code": "103.02",
         "description": "Sous-groupes de Z"
+      },
+      {
+        "code": "103.03",
+        "description": "Pgcd, ppcm, algorithme d'Euclide"
       },
       {
         "code": "103.04",
@@ -410,6 +444,64 @@
     ]
   },
   {
+    "id": 127,
+    "titre": "Calcul d'intégrales",
+    "sousChapitres": [
+      {
+        "code": "127.01",
+        "description": "Théorie"
+      },
+      {
+        "code": "127.02",
+        "description": "Somme de Riemann"
+      },
+      {
+        "code": "127.03",
+        "description": "Longueur, aire, volume"
+      },
+      {
+        "code": "127.04",
+        "description": "Intégration à  l'aide d'une fonction auxiliaire"
+      },
+      {
+        "code": "127.05",
+        "description": "Changement de variables"
+      },
+      {
+        "code": "127.06",
+        "description": "Intégration par parties"
+      },
+      {
+        "code": "127.07",
+        "description": "Polynôme en sin, cos ou en sh, ch"
+      },
+      {
+        "code": "127.08",
+        "description": "Fraction rationnelle"
+      },
+      {
+        "code": "127.09",
+        "description": "Fraction rationnelle en sin, cos ou en sh, ch"
+      },
+      {
+        "code": "127.10",
+        "description": "Intégrale abélienne"
+      },
+      {
+        "code": "127.11",
+        "description": "Primitives diverses"
+      },
+      {
+        "code": "127.12",
+        "description": "Intégrale impropre"
+      },
+      {
+        "code": "127.99",
+        "description": "Autre"
+      }
+    ]
+  },
+  {
     "id": 200,
     "titre": "Déterminant, système linéaire",
     "sousChapitres": [
@@ -431,6 +523,48 @@
       },
       {
         "code": "200.99",
+        "description": "Autre"
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "titre": "Réduction d'endomorphisme, polynôme annulateur",
+    "sousChapitres": [
+      {
+        "code": "201.01",
+        "description": "Valeur propre, vecteur propre"
+      },
+      {
+        "code": "201.02",
+        "description": "Diagonalisation"
+      },
+      {
+        "code": "201.03",
+        "description": "Polynôme caractéristique, théorème de Cayley-Hamilton"
+      },
+      {
+        "code": "201.04",
+        "description": "Sous-espace stable"
+      },
+      {
+        "code": "201.05",
+        "description": "Trigonalisation"
+      },
+      {
+        "code": "201.06",
+        "description": "Réduction de Jordan"
+      },
+      {
+        "code": "201.07",
+        "description": "Applications"
+      },
+      {
+        "code": "201.08",
+        "description": "Polynôme annulateur"
+      },
+      {
+        "code": "201.99",
         "description": "Autre"
       }
     ]
@@ -468,6 +602,10 @@
       {
         "code": "203.01",
         "description": "Groupe, sous-groupe"
+      },
+      {
+        "code": "203.02",
+        "description": "Ordre d'un élément"
       },
       {
         "code": "203.03",
@@ -584,8 +722,20 @@
         "description": "Convergence normale"
       },
       {
+        "code": "220.02",
+        "description": "Critères de Cauchy et d'Alembert"
+      },
+      {
         "code": "220.03",
         "description": "Rayon de convergence"
+      },
+      {
+        "code": "220.04",
+        "description": "Propriétés de la sommme d'une série entière"
+      },
+      {
+        "code": "220.05",
+        "description": "Calcul de la somme d'une série entière"
       },
       {
         "code": "220.06",
@@ -648,6 +798,10 @@
         "description": "Continuité, dérivabilité"
       },
       {
+        "code": "222.03",
+        "description": "Suites et séries d'intégrales"
+      },
+      {
         "code": "222.04",
         "description": "Suite et série de matrices"
       },
@@ -708,6 +862,14 @@
         "description": "Intégrale multiple"
       },
       {
+        "code": "224.02",
+        "description": "Calcul approché d'intégrale"
+      },
+      {
+        "code": "224.03",
+        "description": "Intégrale de Riemann dépendant d'un paramètre"
+      },
+      {
         "code": "224.04",
         "description": "Tranformée de Laplace et transformée de Fourier"
       },
@@ -721,6 +883,14 @@
     "id": 225,
     "titre": "Equation différentielle",
     "sousChapitres": [
+      {
+        "code": "225.01",
+        "description": "Résolution d'équation différentielle du premier ordre"
+      },
+      {
+        "code": "225.02",
+        "description": "Résolution d'équation différentielle du deuxième ordre"
+      },
       {
         "code": "225.03",
         "description": "Raccordement de solutions"
@@ -808,6 +978,36 @@
     ]
   },
   {
+    "id": 240,
+    "titre": "Géométrie affine dans le plan et dans l'espace",
+    "sousChapitres": [
+      {
+        "code": "240.00",
+        "description": "Géométrie affine dans le plan et dans l'espace"
+      },
+      {
+        "code": "240.01",
+        "description": "Sous-espaces affines"
+      },
+      {
+        "code": "240.02",
+        "description": "Applications affines"
+      },
+      {
+        "code": "240.03",
+        "description": "Barycentre"
+      },
+      {
+        "code": "240.04",
+        "description": "Propriétés des triangles"
+      },
+      {
+        "code": "240.99",
+        "description": "Autres"
+      }
+    ]
+  },
+  {
     "id": 241,
     "titre": "Isométrie vectorielle",
     "sousChapitres": [
@@ -828,6 +1028,10 @@
       {
         "code": "242.01",
         "description": "Géométrie affine euclidienne du plan"
+      },
+      {
+        "code": "242.02",
+        "description": "Géométrie affine euclidienne de l'espace"
       }
     ]
   },
@@ -894,8 +1098,38 @@
         "description": "Propriétés métriques : longueur, courbure,..."
       },
       {
+        "code": "244.08",
+        "description": "Courbes dans l'espace"
+      },
+      {
         "code": "244.99",
         "description": "Autre"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "titre": "Géométrie de l'espace",
+    "sousChapitres": [
+      {
+        "code": "141.01",
+        "description": "Produit scalaire, produit vectoriel, déterminant"
+      },
+      {
+        "code": "141.02",
+        "description": "Aire, volume"
+      },
+      {
+        "code": "141.03",
+        "description": "Plans"
+      },
+      {
+        "code": "141.04",
+        "description": "Droites de l'espace"
+      },
+      {
+        "code": "141.05",
+        "description": "Distance"
       }
     ]
   },
@@ -1008,6 +1242,10 @@
         "description": "Estimation"
       },
       {
+        "code": "262.02",
+        "description": "Tests d'hypothèses, intervalle de confiance"
+      },
+      {
         "code": "262.99",
         "description": "Autre"
       }
@@ -1020,6 +1258,16 @@
       {
         "code": "300.00",
         "description": "Groupe quotient, théorème de Lagrange"
+      }
+    ]
+  },
+  {
+    "id": 301,
+    "titre": "Ordre d'un élément",
+    "sousChapitres": [
+      {
+        "code": "301.00",
+        "description": "Ordre d'un élément"
       }
     ]
   },
@@ -1214,6 +1462,16 @@
     ]
   },
   {
+    "id": 326,
+    "titre": "Extension d'anneau",
+    "sousChapitres": [
+      {
+        "code": "326.00",
+        "description": "Extension d'anneau"
+      }
+    ]
+  },
+  {
     "id": 327,
     "titre": "Autre",
     "sousChapitres": [
@@ -1320,6 +1578,26 @@
       {
         "code": "370.00",
         "description": "Différentiabilité, calcul de différentielles"
+      }
+    ]
+  },
+  {
+    "id": 371,
+    "titre": "Différentielle d'ordre supérieur, formule de Taylor",
+    "sousChapitres": [
+      {
+        "code": "371.00",
+        "description": "Différentielle d'ordre supérieur, formule de Taylor"
+      }
+    ]
+  },
+  {
+    "id": 372,
+    "titre": "Difféomorphisme, théorème d'inversion locale et des fonctions implicites",
+    "sousChapitres": [
+      {
+        "code": "372.00",
+        "description": "Difféomorphisme, théorème d'inversion locale et des fonctions implicites"
       }
     ]
   },
@@ -1450,6 +1728,16 @@
       {
         "code": "404.00",
         "description": "Intégrales multiples, théorème de Fubini"
+      }
+    ]
+  },
+  {
+    "id": 405,
+    "titre": "Intégrale dépendant d'un paramètre",
+    "sousChapitres": [
+      {
+        "code": "405.00",
+        "description": "Intégrale dépendant d'un paramètre"
       }
     ]
   },
@@ -1704,6 +1992,16 @@
     ]
   },
   {
+    "id": 454,
+    "titre": "Résolution d'équation différentielle",
+    "sousChapitres": [
+      {
+        "code": "454.00",
+        "description": "Résolution d'équation différentielle"
+      }
+    ]
+  },
+  {
     "id": 455,
     "titre": "Résolution de systèmes linéaires : méthode directe",
     "sousChapitres": [
@@ -1770,6 +2068,16 @@
       {
         "code": "471.00",
         "description": "Multiplicateurs de Lagrange"
+      }
+    ]
+  },
+  {
+    "id": 472,
+    "titre": "Algorithme d'Uzawa",
+    "sousChapitres": [
+      {
+        "code": "472.00",
+        "description": "Algorithme d'Uzawa"
       }
     ]
   },
@@ -1880,6 +2188,26 @@
       {
         "code": "431.00",
         "description": "Autre"
+      }
+    ]
+  },
+  {
+    "id": 432,
+    "titre": "Théorème de Stone-Weirstrass, théorème d'Ascoli",
+    "sousChapitres": [
+      {
+        "code": "432.00",
+        "description": "Théorème de Stone-Weirstrass, théorème d'Ascoli"
+      }
+    ]
+  },
+  {
+    "id": 328,
+    "titre": "Forme bilinéaire",
+    "sousChapitres": [
+      {
+        "code": "328.00",
+        "description": "Forme bilinéaire"
       }
     ]
   }
